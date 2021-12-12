@@ -1,4 +1,4 @@
-package Lesson1;
+package lesson1;
 
 public class Treadmill implements SportsEquipment{
     private int range;

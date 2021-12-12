@@ -1,4 +1,4 @@
-package Lesson1;
+package lesson1;
 
 public class Wall implements SportsEquipment{
     private double height ;

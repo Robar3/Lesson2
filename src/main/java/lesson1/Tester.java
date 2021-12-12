@@ -1,4 +1,4 @@
-package Lesson1;
+package lesson1;
 
 public interface Tester {
     boolean jump(Wall wall);

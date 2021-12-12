@@ -1,17 +1,17 @@
-package Lesson1;
+package lesson1;
 
-public class Robot implements Tester{
+public class Cat implements Tester{
 
-    private double limitJump=0.5;
-    private int limitRun=1000;
+    private double limitJump=2.2;
+    private int limitRun=100;
 
     @Override
     public boolean jump(Wall wall) {
         if (wall.getHeight()<limitJump){
-            System.out.println("Robot jumped");
+            System.out.println("Cat jumped");
             return true;
         }
-        System.out.println("Robot cold ot jump");
+        System.out.println("Cat cold ot jump");
         return false;
 
     }
@@ -19,19 +19,16 @@ public class Robot implements Tester{
     @Override
     public boolean run(Treadmill treadmill) {
         if (treadmill.getRange()<limitRun){
-            System.out.println("Robot ran");
+            System.out.println("Cat ran");
             return true;
         }
-        System.out.println("Robot could not run");
+        System.out.println("Cat could not run");
         return false;
 
-    }
-
-    public double getLimitJump() {
-        return limitJump;
     }
 
     public int getLimitRun() {
         return limitRun;
     }
+
 }
