@@ -11,23 +11,27 @@ public class Test {
         List<Tester> testers = new ArrayList<>();
         List<SportsEquipment> sportsEquipments = new ArrayList<>();
         for (int i = 0; i < 2; i++) {
-            testers.add(new Human());
-            testers.add(new Cat());
-            testers.add(new Robot());
+            testers.add(new Human(("human"+i)));
+            testers.add(new Cat(("cat"+i)));
+            testers.add(new Robot(("robot"+i)));
         }
 
 
         for (int i = 0; i < 3; i++) {
-            sportsEquipments.add(new Treadmill(random.nextInt((3000 - 50) + 1) + 50));
-            sportsEquipments.add(new Wall((0.1 + (3 - 0.1) * random.nextDouble())));
+            sportsEquipments.add(new Treadmill(random.nextInt((2000 - 50) + 1) + 50));
+            sportsEquipments.add(new Wall((0.1 + (2 - 0.1) * random.nextDouble())));
         }
 
         for (Tester tester: testers) {
             for (int i = 0; i < sportsEquipments.size(); i++) {
-                if (sportsEquipments.get(i) instanceof Treadmill)
-                tester.run((Treadmill) (sportsEquipments.get(i)));
-                else tester.jump((Wall) (sportsEquipments.get(i)));
-            }
+                if (sportsEquipments.get(i) instanceof Treadmill){
+                    if (tester.run((Treadmill) (sportsEquipments.get(i)),tester.getLimitRun(),tester.getName()));
+                    else break;
+                }
+                else {
+                    if (tester.jump((Wall) (sportsEquipments.get(i)),tester.getLimitJump(),tester.getName())){}
+                    else break;
+            }}
         }
 
     }

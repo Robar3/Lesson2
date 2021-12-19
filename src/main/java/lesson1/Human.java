@@ -2,29 +2,18 @@ package lesson1;
 
 public class Human implements Tester{
 
+    String name;
     private double limitJump=1.5;
     private int limitRun=2000;
 
-    @Override
-    public boolean jump(Wall wall) {
-        if (wall.getHeight()<limitJump){
-            System.out.println("Human jumped");
-            return true;
-        }
-        System.out.println("Human cold ot jump");
-        return false;
-
+    public Human(String name) {
+        this.name = name;
     }
 
-    @Override
-    public boolean run(Treadmill treadmill) {
-        if (treadmill.getRange()<limitRun){
-            System.out.println("Human ran");
-            return true;
-        }
-        System.out.println("Human could not run");
-        return false;
 
+    @Override
+    public String getName() {
+        return name;
     }
 
     public double getLimitJump() {
