@@ -3,8 +3,8 @@ package lesson1;
 public class Cat implements Tester{
 
     String name;
-    private double limitJump=2.2;
-    private int limitRun=100;
+    final private double limitJump=2.2;
+    final private int limitRun=100;
 
     public Cat(String name) {
         this.name = name;
